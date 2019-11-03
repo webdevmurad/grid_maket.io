@@ -7,10 +7,33 @@ $gutter: 20px
 .grid
     display: grid
 
+*
+	box-sizing: border-box
+	&:before, &:after
+		box-sizing: border-box
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: "raleway-grid", sans-serif
+	overflow-x: hidden
+	opacity: 1
+	color: #333
+
 .container 
     max-width: 1200px
     margin: auto
     padding: 0 $gutter
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
 
 .landing
     &-section
@@ -20,3 +43,16 @@ $gutter: 20px
             font-weight: 800
             color: $dark
             line-height: 1.2
+
+input, textarea
+	border: none
+	padding: 15px 20px
+	width: 100%
+	font-family: Arial, sans-serif
+	font-style: italic
+	outline: none
+	transition: background-color .25s ease
+	&:focus
+		background-color: $light
+	&::placeholder
+		color: lighten($dark, 20%)
